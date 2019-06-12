@@ -1,0 +1,101 @@
+#mainPicture{
+background:url(https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+background-size:cover;
+}
+body, h1, h2, h3, label, .button{
+    color:black !important;
+    font-weight:700;
+    font-family: 'Raleway', sans-serif;
+}
+#sidebar {
+background: #f4f3f3;
+border-right:1px solid black;
+}
+#sidebar nav a{
+    color:black;
+    font-weight:700;
+    font-size:1rem;
+    font-family: 'Raleway', sans-serif;
+}
+#sidebar nav a.active{
+    color:black;
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+#sidebar nav a:hover{
+    color:gray;
+}
+#firstProject {
+    background:#dfdfdf;
+}
+#secondProject{
+    background:#bfd8d5; 
+}
+#thirdProject{
+    background:#b1bed5;
+}
+#contactForm {
+    background: #d8d8d8 ;
+}
+.wrapper.style1-alt {
+    background-color:#f1f1f1;
+}
+.actions{
+    font-size:1em;
+}
+
+#name, #email, #message{
+    border:1px solid black;
+}
+#one{
+    background-color:#d8d8d8;
+    border-top:1px solid grey;
+    border-bottom:1px solid grey;
+}
+.aboutMeText{
+    font-size:1.1rem;
+    font-weight:300;
+    font-family: 'Raleway', sans-serif;
+    padding-left:5em;
+    padding-right:5em;
+}
+#ABOUTME{
+    padding-bottom:1.3rem;
+}
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight:300;
+    font-size:1.1rem;
+}
+#mainPicDefinition{
+    font-weight:700;
+    font-size:1.5rem;
+    margin-top:20rem;
+}
+.imag{
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	
+}
+.content{
+	padding-top:4em;
+	padding-bottom:8em;
+
+}
+#skills{
+	font-size:1.5rem;
+	padding-bottom:2.5rem;
+}
+a {
+	border-botom:1px solid black;
+}
+#githubLink{
+	
+    font-family: 'Raleway', sans-serif;
+    font-weight:300;
+    font-size:1.1rem;
+}
+@media screen and (max-width: 980px)
+.split > * {
+	border-top:3px solid red !important;
+}
