@@ -23,10 +23,10 @@ border-right:1px solid black;
     filter: saturate(150%);
 }
 #sidebar nav a:hover{
-    color:gray;
+    color:#5E0B15;
 }
 #firstProject {
-    background:#dfdfdf;
+    background:#B8CDF8;
 }
 #secondProject{
     background:#bfd8d5; 
@@ -48,7 +48,7 @@ border-right:1px solid black;
     border:1px solid black;
 }
 #one{
-    background-color:#d8d8d8;
+    background-color:#E0E1E9;
     border-top:1px solid grey;
     border-bottom:1px solid grey;
 }
@@ -95,7 +95,8 @@ a {
     font-weight:300;
     font-size:1.1rem;
 }
-@media screen and (max-width: 980px)
+@media screen and (max-width: 980px){
 .split > * {
 	border-top:3px solid red !important;
+}
 }

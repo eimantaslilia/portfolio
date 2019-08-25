@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EmailService {
-	
-	//Spring helper class for e-mails
+
 	@Autowired
 	private JavaMailSenderImpl mailSender;
 	
