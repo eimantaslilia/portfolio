@@ -1,7 +1,5 @@
 package project.portfolioSite.Controller;
 
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -26,19 +24,19 @@ public class MessageController {
 	private String inboxEmail;
 
 	@PostMapping("/submit")
-	public RedirectView emailMe (@ModelAttribute("message") Message message, RedirectAttributes ra) throws IOException {
+	public RedirectView emailMe (@ModelAttribute("message") Message message, RedirectAttributes ra) {
 
 	
 		SimpleMailMessage emailMessage = new SimpleMailMessage();
 		
 		emailMessage.setFrom(message.getEmail());
 		emailMessage.setTo(inboxEmail);
-		emailMessage.setSubject("Message from Portfolio Website!");
+		emailMessage.setSubject("Message from Portfolio Website");
 		emailMessage.setText("From: " + message.getEmail() +"\nName: " +message.getName()+ "\n\n" +message.getMessage());
 		
 		emailService.send(emailMessage);
 		
-		ra.addFlashAttribute("message", "Message was sent!");
+		ra.addFlashAttribute("messageSent", "Your message has been sent");
 		return new RedirectView("/");
 	}
 }

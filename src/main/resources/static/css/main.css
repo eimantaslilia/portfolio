@@ -1945,7 +1945,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: rgba(255, 255, 255, 0.55) !important;
+			border-color: #5E0B15 !important;
+			color: #5E0B15 !important;
 		}
 
 			input[type="submit"]:hover:after,
@@ -2341,7 +2342,7 @@ input, select, textarea {
 		select:focus,
 		textarea:focus {
 			border-color: #ffffff;
-			box-shadow: 0 0 0 1px #ffffff;
+			/*box-shadow: 0 0 0 1px #ffffff;*/
 		}
 
 	select {

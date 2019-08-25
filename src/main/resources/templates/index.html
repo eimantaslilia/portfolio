@@ -42,7 +42,10 @@
 					<section id="mainPicture" class="wrapper style1 fullscreen fade-up">
 						<div class="outer"></div>
 						<div class="inner">
-							<p id="mainPicDefinition">VILNIUS BASED SOFTWARE DEVELOPER</p>
+							<p id="mainPicDefinition">UK BASED SOFTWARE DEVELOPER</p>
+							<div th:if="${messageSent}">
+								<p style="color:green; font-weight:bold;" th:text="${messageSent}"></p>
+							</div>
 							
 						</div>
 					</section>
@@ -54,7 +57,7 @@
 									<div class="content" id="aboutMeSection">
 										<div class="inner text-center">
 											<h1 id="ABOUTME">ABOUT ME</h1>
-											<h3 id="skills">Java | Spring Boot | Spring Framework | SQL | Hibernate | REST | Maven | Thymeleaf</h3>
+											<h3 id="skills">Java | Spring Boot | SQL | Hibernate | Maven | HTML | CSS | Bootstrap | Thymeleaf</h3>
 											<p class="aboutMeText">My name is Eimantas. I'm an aspiring software developer and I'm teaching myself to code every day.</p> 
 													<p class="aboutMeText">I introduced myself to programming in the beginning of 2019 by learning the basics of Java and I've been studying ever since. 
 													Currently I'm focused on learning Java, Spring framework and related technologies. I enjoy problem-solving, googling and figuring out how to build web applications.</p>
@@ -66,40 +69,40 @@
 				<!-- Two -->
 					<section id="two" class="wrapper style3 spotlights">
 						<section id="firstProject">
-							<div class="image"><img src="https://i.imgur.com/8zGTfRp.png" alt="" data-position="center center" /></div>
+							<div class="image"><img src="../images/books.jpg" style="background-size:cover;" alt="" data-position="center center" /></div>
 							<div class="content">
 								<div class="inner">
-									<h2>Image Gallery</h2>
-									<p class="paragraphs">This is a web application made to showcase CRUD operations using REST on images. The users can collaborate on creating a gallery of pictures and share them with the world.</p>
+									<h2>E-Commerce Bookstore</h2>
+									<p class="paragraphs">A full-stack web application built with Spring Boot that has common functions of e-commerce websites.</p>
 									<ul class="actions">
-										<li><a href="http://gallery.eu-west-2.elasticbeanstalk.com/" class="button" id="demo">Demo</a></li>
-										<li><a href="https://github.com/eimantaslilia/gallery-project" class="button">GitHub</a></li>
+										<li><a href="http://bookstore-eimantas.eu-west-2.elasticbeanstalk.com/" class="button" id="demo">Demo</a></li>
+										<li><a href="https://github.com/eimantaslilia/e-commerce-bookstore" class="button">GitHub</a></li>
 									</ul>
 								</div>
 							</div>
 						</section>
 						<section id="secondProject">
-								<div class="image"><img src="https://cdn.dribbble.com/users/14096/screenshots/4137007/slak.gif" alt="" data-position="top center" /></div>
+								<div class="image"><img src="../images/galleryPic10.png" alt="" data-position="top center" /></div>
 							<div class="content">
 								<div class="inner">
-									<h2>Loading...</h2>
-									<p></p>
+									<h2>Image Gallery</h2>
+									<p>This is a web application made to showcase CRUD operations using REST on images. The users can collaborate on creating a gallery of pictures and share them with the world.</p>
 									<ul class="actions">
-										<li><a href="https://github.com/eimantaslilia" class="button">Demo</a></li>
-										<li><a href="https://github.com/eimantaslilia" class="button">GitHub</a></li>
+										<li><a href="https://github.com/eimantaslilia" class="button disabled">Demo</a></li>
+										<li><a href="https://github.com/eimantaslilia/gallery-project" class="button">GitHub</a></li>
 									</ul>
 								</div>
 							</div>
 						</section>
 						<section id="thirdProject">
-								<div class="image"><img src="https://cdn.dribbble.com/users/587537/screenshots/6320901/loading-ghost.gif" alt="" data-position="center center" /></div>
+								<div class="image"><img src="https://cdn.dribbble.com/users/14096/screenshots/4137007/slak.gif " alt="" data-position="center center" /></div>
 								<div class="content">
 									<div class="inner">
 										<h2>Loading...</h2>
 										<p></p>
 										<ul class="actions">
-											<li><a href="https://github.com/eimantaslilia" class="button">Demo</a></li>
-											<li><a href="https://github.com/eimantaslilia" class="button">GitHub</a></li>
+											<li><a href="https://github.com/eimantaslilia" class="button disabled">Demo</a></li>
+											<li><a href="https://github.com/eimantaslilia" class="button disabled">GitHub</a></li>
 										</ul>
 									</div>
 								</div>
@@ -113,20 +116,19 @@
 							<p>Feel free to send me a message!</p>
 							<div class="split style1">
 								<section>
-									<form id="contactForm" th:action="@{/contact/submit}" th:object="${message}" method="post">
+									<form th:action="@{/contact/submit}" th:object="${message}" method="post">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
-												<input type="text" id="name" name="name" required/>
+												<input type="text" id="name" name="name" required="required"/>
 											</div>
 											<div class="field half">
 												<label for="email">Email</label>
-												<input type="text" required name="email" id="email" />
+												<input type="email" required="required" name="email" id="email" />
 											</div>
 											<div class="field">
 												<label for="message">Message</label>
-												<textarea name="message" required id="message" rows="5"></textarea>
-												
+												<textarea name="message" id="message" rows="5" required="required"></textarea>
 											</div>
 										</div>
 										<ul class="actions">
@@ -142,15 +144,15 @@
 			</div>
 
 		<!-- Scripts -->
-		<script>$('#contactForm').submit(function () {
-			 console.log("labukas");
-			 sendContactForm();
-			 return false;
-			});</script>
-			<script>function sendContactForm(){
-			    $("#messageSent").slideDown("slow");
-			    setTimeout('$("#messageSent").slideUp();$("#contactForm").slideUp("slow")', 2000);
-			}</script>
+<!--		<script>$('#contactForm').submit(function () {-->
+<!--			 console.log("labukas");-->
+<!--			 sendContactForm();-->
+<!--			 return false;-->
+<!--			});</script>-->
+<!--			<script>function sendContactForm(){-->
+<!--			    $("#messageSent").slideDown("slow");-->
+<!--			    setTimeout('$("#messageSent").slideUp();$("#contactForm").slideUp("slow")', 2000);-->
+<!--			}</script>-->
 			<script th:src="@{/js/jquery.min.js}"></script>
 			<script th:src="@{/js/jquery.scrollex.min.js}"></script>
 			<script th:src="@{/js/jquery.scrolly.min.js}"></script>
